@@ -1,10 +1,11 @@
 from tkinter import *
+import time
 
 tk = Tk()
-tk.title("WannaCry Decrypt0r 1.0")
-tk.iconbitmap(r'Images\Malware.ico')
+tk.title("WannaCry Decrypt0r 1.0")          #Заголовок программы
+tk.iconbitmap(r'Images\Malware.ico')        #Иконка программы
 tk.geometry("640x480")
-bg = PhotoImage(file="Images\Road.png")
+bg = PhotoImage(file="Images\Road.png")     #Фон
 canvas = Canvas(tk, width=640, height=480)
 canvas.pack(fill="both", expand=True)
 canvas.create_image(0, 0, image=bg, anchor="nw")
@@ -18,13 +19,11 @@ id_img = canvas.create_image(0, 300, anchor=NW, image=Rocket_obj)
 TrafficLights_obj = PhotoImage(file="Images\Green.png")
 id_img = canvas.create_image(600, 140, anchor=NW, image=TrafficLights_obj)
 
-import time
-
 for i in range(1, 640):
-    canvas.move(2, 4, 0)
+    canvas.move(2, 4, 0)            #Айди объекта canvas, скорость перемещения X, Y
     canvas.move(3, 2, 0)
     canvas.move(4, 8, 0)
     tk.update()
-    time.sleep(0.01)
+    time.sleep(0.0001)                #Частота обновления для плавности
 
 tk.mainloop()
